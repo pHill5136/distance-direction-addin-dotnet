@@ -211,6 +211,9 @@
       <Name>DistanceAndDirectionLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Config.de-DE.xml" />
+  </ItemGroup>
   <PropertyGroup>
     <ZipFileExtension>esriAddIn</ZipFileExtension>
     <AddInTargetProduct>Desktop</AddInTargetProduct>
