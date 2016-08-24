@@ -124,6 +124,15 @@ namespace DistanceAndDirectionLibrary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overwrite Feature Class.
+        /// </summary>
+        public static string CaptionOverwrite {
+            get {
+                return ResourceManager.GetString("CaptionOverwrite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Distance and Bearing.
         /// </summary>
         public static string EnumBearingAndDistance {
@@ -781,11 +790,29 @@ namespace DistanceAndDirectionLibrary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You&apos;ve selected a feature class that already exists. Do you wish to replace it?.
+        /// </summary>
+        public static string MsgOverwrite {
+            get {
+                return ResourceManager.GetString("MsgOverwrite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit Properties.
         /// </summary>
         public static string TitleEditProperties {
             get {
                 return ResourceManager.GetString("TitleEditProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select output.
+        /// </summary>
+        public static string TitleSelectOutput {
+            get {
+                return ResourceManager.GetString("TitleSelectOutput", resourceCulture);
             }
         }
         

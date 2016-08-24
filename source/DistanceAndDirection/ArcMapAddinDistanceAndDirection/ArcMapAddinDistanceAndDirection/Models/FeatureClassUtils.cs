@@ -29,7 +29,6 @@ using ESRI.ArcGIS.DataSourcesFile;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.ADF;
 using DistanceAndDirectionLibrary;
-using ESRI.ArcGIS.Display;
 
 namespace ArcMapAddinDistanceAndDirection.Models
 {
@@ -58,8 +57,8 @@ namespace ArcMapAddinDistanceAndDirection.Models
                 ipGxObjFilterCol.AddFilter(new GxFilterShapefilesClass(), false);
 
                 m_ipSaveAsGxDialog.AllowMultiSelect = false;
-                m_ipSaveAsGxDialog.Title = "Select output";
-                m_ipSaveAsGxDialog.ButtonCaption = "OK";
+                m_ipSaveAsGxDialog.Title = DistanceAndDirectionLibrary.Properties.Resources.TitleSelectOutput;
+                m_ipSaveAsGxDialog.ButtonCaption = DistanceAndDirectionLibrary.Properties.Resources.ButtonOK;
                 m_ipSaveAsGxDialog.RememberLocation = true;
             }
             else
@@ -93,7 +92,9 @@ namespace ArcMapAddinDistanceAndDirection.Models
 
                     while (DoesFeatureClassExist(ipDataset.Workspace.PathName, m_ipSaveAsGxDialog.Name))
                     {
-                        if (System.Windows.Forms.MessageBox.Show("You've selected a feature class that already exists. Do you wish to replace it?", "Overwrite Feature Class", System.Windows.Forms.MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                        if (System.Windows.Forms.MessageBox.Show(DistanceAndDirectionLibrary.Properties.Resources.MsgOverwrite, 
+                                                                 DistanceAndDirectionLibrary.Properties.Resources.CaptionOverwrite, 
+                                                                 System.Windows.Forms.MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                         {
                             return m_ipSaveAsGxDialog.FinalLocation.FullName + "\\" + m_ipSaveAsGxDialog.Name;
                         }
