@@ -343,7 +343,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                 minorAxis = MajorAxisDistance;
             try
             {
-                var param = new GeometryEngine.GeodesicEllipseParameter();
+                var param = new GeodesicEllipseParameter();
 
                 param.Center = new Coordinate(Point1);
                 param.AxisDirection = GetRadiansFrom360Degrees(GetAzimuthAsDegrees());
@@ -353,7 +353,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                 param.SemiAxis2Length = minorAxis;
                 param.VertexCount = VertexCount;
 
-                var geom = GeometryEngine.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
+                var geom = GeometryEngine.Instance.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
 
                 ClearTempGraphics();
 
@@ -361,9 +361,9 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                 //EllipseAttributes ellipseAttributes = new EllipseAttributes(Point1, minorAxis, majorAxisDistance, para.AxisDirection);
 
                 // Point
-                AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                 // Ellipse
-                AddGraphicToMap(geom, ColorFactory.GreyRGB, null, true);
+                AddGraphicToMap(geom, ColorFactory.Instance.GreyRGB, null, true);
             }
             catch(Exception ex)
             {
@@ -391,7 +391,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                 Point1 = point;
                 HasPoint1 = true;
                 Point1Formatted = string.Empty;
-                AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
 
             }
             else if (!HasPoint2)
@@ -511,7 +511,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
 
             try
             {
-                var param = new GeometryEngine.GeodesicEllipseParameter();
+                var param = new GeodesicEllipseParameter();
 
                 param.Center = new Coordinate(Point1);
                 param.AxisDirection = GetRadiansFrom360Degrees(GetAzimuthAsDegrees());
@@ -521,7 +521,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                 param.SemiAxis2Length = MinorAxisDistance;
                 param.VertexCount = VertexCount;
 
-                var geom = GeometryEngine.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
+                var geom = GeometryEngine.Instance.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
 
                 // Hold onto the attributes in case user saves graphics to file later
                 EllipseAttributes ellipseAttributes = new EllipseAttributes() { mapPoint = Point1, minorAxis = MinorAxisDistance, majorAxis = MajorAxisDistance, angle = param.AxisDirection };

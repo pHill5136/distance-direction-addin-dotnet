@@ -125,7 +125,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     ClearTempGraphics();
                     if(HasPoint1)
                         // Re-add the point as it was cleared by ClearTempGraphics() but we still want to see it
-                        AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                        AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                     throw new ArgumentException(DistanceAndDirectionLibrary.Properties.Resources.AEInvalidInput);
                 }
 
@@ -217,7 +217,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     ClearTempGraphics();
                     if (HasPoint1)
                         // Re-add the point as it was cleared by ClearTempGraphics() but we still want to see it
-                        AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                        AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                     throw new ArgumentException(DistanceAndDirectionLibrary.Properties.Resources.AEInvalidInput);
                 }
             }
@@ -242,7 +242,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     ClearTempGraphics();
                     if (HasPoint1)
                         // Re-add the point as it was cleared by ClearTempGraphics() but we still want to see it
-                        AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                        AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                     throw new ArgumentException(DistanceAndDirectionLibrary.Properties.Resources.AEMustBePositive);
                 }
 
@@ -261,7 +261,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     ClearTempGraphics();
                     if (HasPoint1)
                         // Re-add the point as it was cleared by ClearTempGraphics() but we still want to see it
-                        AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                        AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                     throw new ArgumentException(DistanceAndDirectionLibrary.Properties.Resources.AEInvalidInput);
                 }
 
@@ -315,7 +315,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     ClearTempGraphics();
                     if (HasPoint1)
                         // Re-add the point as it was cleared by ClearTempGraphics() but we still want to see it
-                        AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                        AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                     throw new ArgumentException(DistanceAndDirectionLibrary.Properties.Resources.AEInvalidInput);
                 }
             }
@@ -352,7 +352,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     ClearTempGraphics();
                     if (HasPoint1)
                         // Re-add the point as it was cleared by ClearTempGraphics() but we still want to see it
-                        AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                        AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                     throw new ArgumentException(DistanceAndDirectionLibrary.Properties.Resources.AEInvalidInput);
                 }
 
@@ -396,7 +396,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     ClearTempGraphics();
                     if (HasPoint1)
                         // Re-add the point as it was cleared by ClearTempGraphics() but we still want to see it
-                        AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                        AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                     throw new ArgumentException(DistanceAndDirectionLibrary.Properties.Resources.AEInvalidInput);
                 }
             }
@@ -451,7 +451,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     ClearTempGraphics();
                     if (HasPoint1)
                         // Re-add the point as it was cleared by ClearTempGraphics() but we still want to see it
-                        AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                        AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                     throw new ArgumentException(DistanceAndDirectionLibrary.Properties.Resources.AEInvalidInput);
                 }
 
@@ -489,7 +489,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     ClearTempGraphics();
                     if (HasPoint1)
                         // Re-add the point as it was cleared by ClearTempGraphics() but we still want to see it
-                        AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                        AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                     throw new ArgumentException(DistanceAndDirectionLibrary.Properties.Resources.AEInvalidInput);
                 }
 
@@ -523,7 +523,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
 
                 ClearTempGraphics();
                 if (HasPoint1)
-                    AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                    AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
 
                 RaisePropertyChanged(() => IsDistanceCalcExpanded);
             }
@@ -587,7 +587,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                         ClearTempGraphics();
                         if (HasPoint1)
                             // Re-add the point as it was cleared by ClearTempGraphics() but we still want to see it
-                            AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                            AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                         throw new ArgumentException(DistanceAndDirectionLibrary.Properties.Resources.AEInvalidInput);
                     }
 
@@ -598,7 +598,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     ClearTempGraphics();
                     if (HasPoint1)
                         // Re-add the point as it was cleared by ClearTempGraphics() but we still want to see it
-                        AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                        AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
                     throw new ArgumentException(DistanceAndDirectionLibrary.Properties.Resources.AEInvalidInput);
                 }
 
@@ -733,7 +733,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                 return null;
             }
 
-            var param = new GeometryEngine.GeodesicEllipseParameter();
+            var param = new GeodesicEllipseParameter();
 
             param.Center = new Coordinate(Point1);
             param.AxisDirection = 0.0;
@@ -745,14 +745,14 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
             param.SemiAxis2Length = Distance;
             param.VertexCount = VertexCount;
 
-            var geom = GeometryEngine.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
+            var geom = GeometryEngine.Instance.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
 
             CIMColor color =  new CIMRGBColor() { R=255,B=0,G=0,Alpha=25};
             if(isFeedback)
             {
-                color = ColorFactory.GreyRGB;
+                color = ColorFactory.Instance.GreyRGB;
                 ClearTempGraphics();
-                AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
             }
 
             // Hold onto the attributes in case user saves graphics to file later

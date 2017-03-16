@@ -181,7 +181,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                         var mpList = new List<MapPoint>() { Point1 };
                         // get point 2
                         
-                        var results = GeometryEngine.GeodeticMove(mpList, MapView.Active.Map.SpatialReference, radialLength, GetLinearUnit(LineDistanceType), GetAzimuthAsRadians(azimuth), GetCurveType());
+                        var results = GeometryEngine.Instance.GeodeticMove(mpList, MapView.Active.Map.SpatialReference, radialLength, GetLinearUnit(LineDistanceType), GetAzimuthAsRadians(azimuth), GetCurveType());
                         // update feedback
                         //UpdateFeedback();
                         foreach (var mp in results)
@@ -194,7 +194,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                         else
                             return null;
                     }).Result;
-                    Geometry newline = GeometryEngine.GeodeticDensifyByLength(polyline, 0, LinearUnit.Meters, CurveType.Loxodrome);
+                    Geometry newline = GeometryEngine.Instance.GeodeticDensifyByLength(polyline, 0, LinearUnit.Meters, GeodeticCurveType.Loxodrome);
                     if (newline != null)
                     {
                         // Hold onto the attributes in case user saves graphics to file later
@@ -234,7 +234,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     // set the current radius
                     radius += Distance;
 
-                    var param = new GeometryEngine.GeodesicEllipseParameter();
+                    var param = new GeodesicEllipseParameter();
 
                     param.Center = new Coordinate(Point1);
                     param.AxisDirection = 0.0;
@@ -244,7 +244,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     param.SemiAxis2Length = radius;
                     param.VertexCount = VertexCount;
 
-                    geom = GeometryEngine.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
+                    geom = GeometryEngine.Instance.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
 
                     // Hold onto the attributes in case user saves graphics to file later
                     RangeAttributes rangeAttributes = new RangeAttributes() { mapPoint = Point1, numRings = numberOfRings, distance = radius, numRadials = numberOfRadials };
@@ -282,7 +282,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                 HasPoint1 = true;
 
                 ClearTempGraphics();
-                AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
 
                 // Reset formatted string
                 Point1Formatted = string.Empty;
@@ -296,7 +296,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
                     HasPoint1 = true;
 
                     ClearTempGraphics();
-                    AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
+                    AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
 
                     // Reset formatted string
                     Point1Formatted = string.Empty;
@@ -367,7 +367,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
             if (Point1 == null || double.IsNaN(Distance))
                 return;
 
-            var param = new GeometryEngine.GeodesicEllipseParameter();
+            var param = new GeodesicEllipseParameter();
 
             param.Center = new Coordinate(Point1);
             param.AxisDirection = 0.0;
@@ -379,7 +379,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
 
             maxDistance = Math.Max(maxDistance, Distance);
 
-            var geom = GeometryEngine.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
+            var geom = GeometryEngine.Instance.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
 
             // Hold onto the attributes in case user saves graphics to file later
             RangeAttributes rangeAttributes = new RangeAttributes() { mapPoint = Point1, numRings = NumberOfRings, distance = Distance, numRadials = NumberOfRadials };
@@ -392,7 +392,7 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
             if (Point1 == null || double.IsNaN(Distance) || Distance <= 0.0)
                 return;
 
-            var param = new GeometryEngine.GeodesicEllipseParameter();
+            var param = new GeodesicEllipseParameter();
 
             param.Center = new Coordinate(Point1);
             param.AxisDirection = 0.0;
@@ -402,14 +402,14 @@ namespace ProAppDistanceAndDirectionModule.ViewModels
             param.SemiAxis2Length = Distance;
             param.VertexCount = VertexCount;
 
-            var geom = GeometryEngine.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
+            var geom = GeometryEngine.Instance.GeodesicEllipse(param, MapView.Active.Map.SpatialReference);
             ClearTempGraphics();
 
             // Hold onto the attributes in case user saves graphics to file later
             RangeAttributes rangeAttributes = new RangeAttributes() { mapPoint = Point1, numRings = NumberOfRings, distance = Distance, numRadials = NumberOfRadials };
 
-            AddGraphicToMap(Point1, ColorFactory.GreenRGB, null, true, 5.0);
-            AddGraphicToMap(geom, ColorFactory.GreyRGB, rangeAttributes, true);
+            AddGraphicToMap(Point1, ColorFactory.Instance.GreenRGB, null, true, 5.0);
+            AddGraphicToMap(geom, ColorFactory.Instance.GreyRGB, rangeAttributes, true);
         }
     }
 }
